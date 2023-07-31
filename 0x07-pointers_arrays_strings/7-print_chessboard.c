@@ -1,10 +1,8 @@
 #include "main.h"
 /**
- * _memset - ironnou
- * @s: pointer to char params
- * @b: data to change
- * @n: index
- * Return: *s
+ * print_chessboard - a function to print a chessboard
+ * @a: pointer to an array
+ * Return: returns nothing
  */
 void print_chessboard(char (*a)[8])
 {
