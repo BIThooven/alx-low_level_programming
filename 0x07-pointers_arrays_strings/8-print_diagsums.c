@@ -1,6 +1,11 @@
 #include "main.h"
 #include <stdio.h>
-
+/**
+ * print_diagsums - Entry point
+ * @a: input
+ * @size: input
+ * Return: Always 0 (Success)
+ */
 
 void print_diagsums(int *a, int size)
 {
@@ -14,7 +19,6 @@ void print_diagsums(int *a, int size)
 	{
 		sum2 += a[i * size + (size - 1 - i)];
 	}
-	printf("%d\n", sum1);
-	printf("%d\n", sum2);
+	printf("%d, %d\n", sum1, sum2);
 }
 
