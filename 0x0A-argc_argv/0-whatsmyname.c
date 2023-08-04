@@ -6,12 +6,12 @@
 *@argv : pointer to the array of strings
 *Return: Alwyas 0 indicating success
 */
-int main(int argc, char *argv[])
+int main(int argc, char **argv)
 {
 	while (argc--)
 	{
 		printf("%s\n", *argv++);
 	}
-	exit(1);
+	exit(EXIT_SUCCESS);
 	return (0);
 }
