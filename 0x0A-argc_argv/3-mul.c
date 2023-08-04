@@ -4,8 +4,6 @@
  * main - function that returns the multiple of 2 args
  * @argc:args to count
  * @argv: pointer to the array of strings
- * @mul: multiplication
- * @i: index to ietterate with
  * Return: always 0 in case of success
 */
 int main(int argc, char **argv)
