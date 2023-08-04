@@ -11,9 +11,9 @@ int main(int argc, char **argv)
 	int mul = 1;
 	int i;
 
-	if (argc < 1)
+	if (argc < 2)
 	{
-		perror("error\n");
+		printf("Error\n");
 		return (1);
 	}
 	else
