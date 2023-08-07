@@ -7,14 +7,13 @@ char **strtow(char *str)
 	{
 		return (NULL);
 	}
-
-	int num_words;
 	char *p;
 	int index;
 	char *start;
 	int i;
 	int length;
 	char **result;
+	int num_words;
 
 	num_words = 0;
 	i = 0;
@@ -37,7 +36,6 @@ char **strtow(char *str)
 	}
 
 	index = 0;
-	p = str;
 	start = (NULL);
 
 	while (*p)
