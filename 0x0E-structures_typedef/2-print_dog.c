@@ -3,7 +3,7 @@
 /**
  * print_dog - a function that prints a dog struct
  * @d: a struct tag
- * Return: void func returns nothing
+ * Return: void returns nothing
 */
 void print_dog(struct dog *d)
 {
@@ -19,7 +19,7 @@ void print_dog(struct dog *d)
 	{
 		printf("Name: %s\n", d->name);
 	}
-	if (d->age == 0 || d->owner == 0)
+	if (d->age == 0 && d->owner == 0)
 	{
 		printf("(nil)");
 	}
