@@ -2,7 +2,7 @@
 #define FUNCTION_POINTERS_H
 int _putchar(char c);
 void print_name(char *name, void (*f)(char *));
-void print_nam(char *name);
+void f(char *name);
 
 
 #endif

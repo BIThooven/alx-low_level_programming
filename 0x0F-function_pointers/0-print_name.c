@@ -2,11 +2,11 @@
 #include <string.h>
 #include "function_pointers.h"
 /**
- * print_nam - a function to print a name
+ * f - a function to print a name
  * @name: an argument for the function , a pointer to char
  * Return: a void func returns nothing
 */
-void print_nam(char *name)
+void f(char *name)
 {
 	while (*name != '\0')
 	{
