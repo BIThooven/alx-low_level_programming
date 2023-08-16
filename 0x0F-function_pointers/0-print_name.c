@@ -10,7 +10,6 @@ void print_nam(char *name)
 {
 	while (*name != '\0')
 	{
-		putchar(*name);
 		name++;
 	}
 }
