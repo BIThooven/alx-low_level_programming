@@ -13,7 +13,6 @@ void print_nam(char *name)
 		putchar(*name);
 		name++;
 	}
-	putchar('\n');
 }
 /**
  * print_name - a functions that takes a function pointer to print a string
