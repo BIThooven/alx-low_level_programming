@@ -4,48 +4,49 @@
 /**
  * print_all - a function that prints anything
  * @format: the format specifier for what needs to be printed
- * Return: void function returns nothing
+ * Return: returns nothing (void)
 */
 void print_all(const char * const format, ...)
 {
 	va_list args;
-	int i, num;
-	char c, *s;
+	const char *ptr;
+	char c;
+	int i;
 	float f;
+	char *s;
+	int printed;
 
-	i = 0;
+	printed = 0;
+	ptr = format;
 	va_start(args, format);
-	while (format[i] != '\0')
+	while (*ptr)
 	{
-		if (format[i] == 'c')
+		if (*ptr == 'c')
 		{
-			c = va_arg(args, int);
-			printf("%c,", c);
+			c = (char) va_arg(args, int);
+			printf("%s%c", printed ? ", " : "", c);
+			printed = 1;
 		}
-		else if (format[i] == 'i')
+		else if (*ptr == 'i')
 		{
-			num = va_arg(args, int);
-			printf(" %d,", num);
+			i = va_arg(args, int);
+			printf("%s%d", printed ? ", " : "", i);
+			printed = 1;
 		}
-		else if (format[i] == 'f')
+		else if (*ptr == 'f')
 		{
-			f = va_arg(args, double);
-			printf(" %f,", f);
+			f = (float) va_arg(args, double);
+			printf("%s%f", printed ? ", " : "", f);
+			printed = 1;
 		}
-		else if (format[i] == 's')
+		else if (*ptr == 's')
 		{
 			s = va_arg(args, char *);
-			if (s != NULL)
-			{
-				printf(" %s,", s);
-			}
-			else
-			{
-				printf(" (nil),");
-			}
+			printf("%s%s", printed ? ", " : "", (s == NULL) ? "(nil)" : s);
+			printed = 1;
 		}
-		i++;
+		ptr++;
 	}
 	va_end(args);
-	printf("\b \n");
+	printf("\n");
 }
