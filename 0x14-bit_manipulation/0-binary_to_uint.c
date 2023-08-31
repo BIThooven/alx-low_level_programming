@@ -7,22 +7,20 @@
 */
 unsigned int binary_to_uint(const char *b)
 {
-	unsigned int k, i, len;
-	int c;
+	unsigned int k;
 
-	k = 1;
-	i = 0;
+	if (b == NULL)
+		return (0);
 
-	len = strlen(b);
-	for (c = len - 1; c >= 0; c--)
+	k = 0;
+	while (*b != '\0')
 	{
-		if (b[c] != '0' && b[c] != '1')
-			return (0);
-		if (b[c] == '1')
+		if (*b != '0' && *b != '1')
 		{
-			i += k;
+			return (0);
 		}
-		k *= 2;
+		k = k * 2 + (*b - '0');
+		b++;
 	}
-	return (i);
+	return (k);
 }
