@@ -8,12 +8,9 @@
 */
 void print_binary(unsigned long int n)
 {
-	unsigned int bit;
-
-	bit = UINT_MAX - (UINT_MAX >> 1);
-	while (bit)
+	if (n > 1)
 	{
-		_putchar(n & bit ? '1' : '0');
-		bit >>= 1;
+		print_binary(n >> 1);
 	}
+	_putchar((n & 1) + '0');
 }
