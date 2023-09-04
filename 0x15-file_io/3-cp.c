@@ -5,7 +5,7 @@
 /**
  * creat_buff - a function to write standard error
  * @f: the file
- * Return: void returns nothing
+ * Return: a pointer to the new buffer
 */
 char *creat_buff(char *f)
 {
@@ -48,7 +48,7 @@ int main(int argc, char **argv)
 
 	if (argc != 3)
 	{
-		dprintf(STDERR_FILENO, "Usage: cp file file_from file_to\n");
+		dprintf(STDERR_FILENO, "Usage: cp file_from file_to\n");
 		exit(97);
 	}
 	buffer = creat_buff(argv[2]);
