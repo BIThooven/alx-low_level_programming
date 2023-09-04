@@ -11,7 +11,7 @@ char *creat_buff(char *f)
 {
 	char *buffer;
 
-	buffer = malloc(sizeof(char) * BUFFER_SIZE);
+	buffer = malloc(sizeof(char) * 1024);
 	if (buffer == NULL)
 	{
 		dprintf(STDERR_FILENO, "Error: Can't write to %s\n", f);
@@ -53,7 +53,7 @@ int main(int argc, char **argv)
 	}
 	buffer = creat_buff(argv[2]);
 	file_from = open(argv[1], O_RDONLY);
-	bytes_read = read(file_from, buffer, BUFFER_SIZE);
+	bytes_read = read(file_from, buffer, );
 	file_to = open(argv[2], O_CREAT | O_WRONLY | O_TRUNC, 0664);
 
 	do {
@@ -70,7 +70,7 @@ int main(int argc, char **argv)
 			free(buffer);
 			exit(99);
 		}
-		bytes_read = read(file_from, buffer, BUFFER_SIZE);
+		bytes_read = read(file_from, buffer, 1024);
 		file_to = open(argv[2], O_WRONLY | O_APPEND);
 	} while (bytes_read > 0);
 	free(buffer);
