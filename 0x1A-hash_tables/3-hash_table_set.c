@@ -3,7 +3,7 @@
 #include <stdlib.h>
 #include <string.h>
 /**
- * hash_table_t - a function that inserts an elements to a hash table
+ * hash_table_set - a function that inserts an elements to a hash table
  * @ht: hashtable to insert to
  * @key: is a key
  * @value: value to be inserted
